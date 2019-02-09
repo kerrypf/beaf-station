@@ -1,0 +1,45 @@
+{
+  "name": "beaf-station",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "axios": "0.18.0",
+    "beaf-scripts": "0.0.21",
+    "element-ui": "2.5.4",
+    "husky": "1.3.1",
+    "json-server": "0.14.2",
+    "lint-staged": "8.1.3",
+    "lodash": "4.17.11",
+    "prettier": "1.16.4",
+    "vue": "^2.6.4",
+    "vue-router": "3.0.2",
+    "vuex": "^3.1.0"
+  },
+  "scripts": {
+    "start": "create-beaf-app start",
+    "build": "create-beaf-app build",
+    "server:mock": "json-server --watch mock/index.js --port 8081"
+  },
+  "proxy": {
+    "/example": {
+      "target": "http://localhost:8081",
+      "secure": false,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/example": ""
+      }
+    }
+  }
+}
