@@ -1,0 +1,15 @@
+*{
+    padding:0;
+    margin :0;
+    list-style-type: none;
+    text-decoration: none;
+    outline-style: none;
+    box-sizing: border-box;
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+}
+@font-face {
+    font-family: Heroes;
+    font-style: normal;
+    font-weight: 400;
+    src: url(../font/heroes.woff2) format("woff2"),url(../font/heroes.woff) format("woff")
+}
