@@ -188,7 +188,29 @@
                 </div>
               </div>
             </div>
-            <div class="qa-message-content">Yo!</div>
+            <div class="qa-message-content">
+              <div class="qa-message-item">
+                <span>工作岗位：</span>
+                <div class="qa-info">
+                  前端开发工程师
+                </div>
+              </div>
+              <div class="qa-message-item">
+                <span>工作描述：</span>
+                <div class="qa-info">
+                  1.
+                  根据需求文档和设计稿，开发PC端单页面应用；负责公司现有项目和新项目的前端修改调试和开发工作；<br />
+                  2.
+                  与设计团队、后端开发团队紧密配合，与设计团队共同制定页面样式规范，与后端开发团队商讨api返回数据结构；<br />
+                  3. 与运维团队配合，实施前端项目部署；<br />
+                  4. 作为前端开发主导，理解迭代需求，分配任务；<br />
+                  5.
+                  在公司内部制定前端编程规范，完善前端框架；制定公司内部分支及版本管理规范，方便维护，并避免由于维护造成的错误的版本发布等问题；<br />
+                  6.
+                  负责公司内部组件库开发，全局功能开发；封装Axios对后端接口做异常处理和数据处理，及相关业务处理；推进前端工程化和自动化。<br />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -210,7 +232,22 @@
               </div>
             </div>
             <div class="qa-message-content">
-              Nice theme . Excellent one .
+              <div class="qa-message-item">
+                <span>工作岗位：</span>
+                <div class="qa-info">
+                  前端开发工程师
+                </div>
+              </div>
+              <div class="qa-message-item">
+                <span>工作描述：</span>
+                <div class="qa-info">
+                  1.
+                  按照需求设计独立完成页面；负责公司现有项目和新项目的前端修改调试和开发工作；<br />
+                  2.
+                  利用D3.js开发公司各种可视化页面，开发自适应图表，如：树状图，柱状图，折线图，饼图，力导向图，环形图，思维导图等；<br />
+                  3. 利用模板引擎handlebars.js开发，实现组件化开发模式<br />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -255,11 +292,48 @@
                     <p>DUI平台产品接入系统，基于vue开发。</p>
                 </div> -->
       </div>
-      <div class="project-detail"></div>
+      <div class="project-tab">
+        <span
+          @click="coverLeft = '95px'"
+          :class="{ active: coverLeft === '95px' }"
+          >产品接入</span
+        >
+        <span
+          @click="coverLeft = '395px'"
+          :class="{ active: coverLeft === '395px' }"
+          >技能定制</span
+        >
+        <span
+          @click="coverLeft = '695px'"
+          :class="{ active: coverLeft === '695px' }"
+          >权限管理</span
+        >
+        <span
+          @click="coverLeft = '995px'"
+          :class="{ active: coverLeft === '995px' }"
+          >个人项目</span
+        >
+        <div class="cover" :style="{ left: coverLeft }">
+          <div class="cover-top"></div>
+          <div class="cover-bottom">
+            <div class="left-cover">
+              <div class="cover-up"></div>
+              <div class="cover-down"></div>
+            </div>
+            <div class="right-cover">
+              <div class="cover-up"></div>
+              <div class="cover-down"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="content-section footer-content">
+    <div class="content-section project-detail">
+      <div class="project-detail-content"></div>
+    </div>
+    <!-- <div class="content-section footer-content">
       <div class="footer-detail"></div>
-    </div>
+    </div> -->
     <div class="footer-nav">
       <div class="copyright">
         <img src="/logo.png" alt="" />
@@ -284,7 +358,15 @@ import particles from "../../assets/particles.json";
 export default {
   data() {
     return {
-      activeIndex: "1"
+      activeIndex: "1",
+      coverLeft: "95px",
+      projectList: [
+        {
+          system: "",
+          name: "",
+          des: ""
+        }
+      ]
     };
   },
   methods: {
@@ -296,7 +378,6 @@ export default {
     handleSelect() {}
   },
   mounted() {
-    console.log(particles);
     particlesJS("particles-js", particles, function() {
       console.log("callback - particles.js config loaded");
     });
