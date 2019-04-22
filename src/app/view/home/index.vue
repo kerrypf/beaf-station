@@ -241,7 +241,7 @@
         </div>
         <div class="project-item product">
           <div class="item-mask"></div>
-          <h2>DUI平台 <span>个人项目</span></h2>
+          <h2>BEAF <span>个人项目</span></h2>
           <p>个人网站及ui组件库</p>
         </div>
         <!-- <div class="project-item skill">
@@ -379,7 +379,6 @@ export default {
   padding-left: calc(50% - 600px);
   padding-right: calc(50% - 600px);
   .content-title {
-    // color:#fff;
     text-align: center;
     margin: 20px 0;
   }
