@@ -257,63 +257,42 @@
       <div class="project-mask"></div>
       <h2 class="content-title">项目经验</h2>
       <div class="project-container">
-        <div class="project-item product">
+        <div
+          class="project-item"
+          :class="item.label"
+          v-for="(item, i) in projectList"
+          :key="i"
+          @mouseenter="projectIndex = i"
+        >
           <div class="item-mask"></div>
-          <h2>DUI平台 <span>产品接入</span></h2>
-          <p>DUI平台产品接入系统，基于vue开发。全链路开发智能语音交互产品...</p>
+          <h2>
+            {{ item.system }} <span>{{ item.name }}</span>
+          </h2>
+          <p>{{ item.des }}</p>
         </div>
-        <div class="project-item skill">
-          <div class="item-mask"></div>
-          <h2>DUI平台 <span>技能定制</span></h2>
-          <p>
-            DUI平台技能定制系统，基于vue开发。技能类似于一个APP，通过语音对话完成一个或者多个特定功能...
-          </p>
-        </div>
-        <div class="project-item permission">
-          <div class="item-mask"></div>
-          <h2>DUI平台 <span>权限管理</span></h2>
-          <p>
-            DUI平台权限管理后台系统，基于vue开发。用于管理用户权限，根据平台开发者类型，对不同角色配置相应权限...
-          </p>
-        </div>
-        <div class="project-item product">
-          <div class="item-mask"></div>
-          <h2>BEAF <span>个人项目</span></h2>
-          <p>个人网站及ui组件库</p>
-        </div>
-        <!-- <div class="project-item skill">
-                    <div class="item-mask"></div>
-                    <h2>DUI平台 <span>技能定制</span></h2>
-                    <p>DUI平台产品接入系统，基于vue开发。</p>
-                </div>
-                <div class="project-item permission">
-                    <div class="item-mask"></div>
-                    <h2>DUI平台 <span>权限管理后台</span></h2>
-                    <p>DUI平台产品接入系统，基于vue开发。</p>
-                </div> -->
       </div>
       <div class="project-tab">
         <span
-          @click="coverLeft = '95px'"
-          :class="{ active: coverLeft === '95px' }"
-          >产品接入</span
+          @click="projectIndex = 0"
+          :class="{ active: coverLeft[projectIndex] === '95px' }"
+          >开发者平台</span
         >
         <span
-          @click="coverLeft = '395px'"
-          :class="{ active: coverLeft === '395px' }"
-          >技能定制</span
+          @click="projectIndex = 1"
+          :class="{ active: coverLeft[projectIndex] === '395px' }"
+          >权限系统</span
         >
         <span
-          @click="coverLeft = '695px'"
-          :class="{ active: coverLeft === '695px' }"
-          >权限管理</span
+          @click="projectIndex = 2"
+          :class="{ active: coverLeft[projectIndex] === '695px' }"
+          >个人网站</span
         >
         <span
-          @click="coverLeft = '995px'"
-          :class="{ active: coverLeft === '995px' }"
-          >个人项目</span
+          @click="projectIndex = 3"
+          :class="{ active: coverLeft[projectIndex] === '995px' }"
+          >工具库</span
         >
-        <div class="cover" :style="{ left: coverLeft }">
+        <div class="cover" :style="{ left: coverLeft[projectIndex] }">
           <div class="cover-top"></div>
           <div class="cover-bottom">
             <div class="left-cover">
@@ -329,11 +308,21 @@
       </div>
     </div>
     <div class="content-section project-detail">
-      <div class="project-detail-content"></div>
+      <div class="project-detail-content">
+        <div
+          v-for="(item, i) in projectList[projectIndex].detail"
+          :key="i"
+          class="project-detail-item"
+        >
+          <span>{{ item.type }}：</span>
+          <div class="detail-info">
+            <p v-for="(info, i) in item.info.split('\n')" :key="i">
+              {{ info }}
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- <div class="content-section footer-content">
-      <div class="footer-detail"></div>
-    </div> -->
     <div class="footer-nav">
       <div class="copyright">
         <img src="/logo.png" alt="" />
@@ -349,7 +338,6 @@
         <i class="iconfont beaf-qq"></i>
       </div>
     </div>
-    <!-- <span @click="getUser">test Axios</span> -->
   </div>
 </template>
 <script>
@@ -359,12 +347,116 @@ export default {
   data() {
     return {
       activeIndex: "1",
-      coverLeft: "95px",
+      // coverLeft: "95px",
+      projectIndex: 0,
+      coverLeft: ["95px", "395px", "695px", "995px"],
       projectList: [
         {
-          system: "",
-          name: "",
-          des: ""
+          system: "DUI系统",
+          name: "开发者平台",
+          label: "product",
+          des: "DUI开发者平台系统，基于vue开发。全链路开发智能语音交互产品...",
+          detail: [
+            {
+              type: "项目描述",
+              info:
+                "产品接入项目，是DUI平台的语音产品可以理解成是多个应用的集合，用以实现复杂的语音交互功能，如满足用户导航，听音乐，查天气，看电影等方方面面的需求。开发者可以根据适用场景的需求来定制配置不同识别引擎和功能的产品。项目使用vue+webpack构建的单页面应用,采用了vuex、vue-route、element-ui、axios以及ES6+语法，采用组件化思想搭建整个项目，从而使组件高度复用。"
+            },
+            {
+              type: "岗位职责",
+              info:
+                "主要负责项目架构设计，页面的布局和数据渲染，完成与后端的接口对接，配合后端的对接联调"
+            },
+            {
+              type: "项目架构",
+              info: `1.使用vue+webpack构建项目环境，以及vuex、vue-router构建单页面应用；\n 
+                  2.使用axios向后台发起请求，基于axios封装处理接口返回异常，数据结构处理，请求中断，请求超时；\n 
+                  2.使用element-ui作为项目开发ui组件库，并基于element-ui开发满足公司业务的公共通用组件；\n 
+                  3.使用node作为中间件，代理前端静态资源（js,css,image等），处理Token验证； \n 
+                  4.使用阿里矢量图标库。`
+            },
+            {
+              type: "开发技术",
+              info: `1.使用Yapi作为后端接口管理，为前端提供mock数据；\n  
+                  2.node搭建前端本地开发服务，利用谷歌插件(Modify Header Value)、配合axios、node服务，实现项目同时代理到多环境，同一项目代理到不同域，提高本地开发效率，本地还原线上环境，快速定位bug等开发模式； \n
+                  3.使用lanhuapp管理和共享文档和设计图，为开发者提供可视化样式数据； \n
+                  4.利用vue的directive、mixins、model，实现复杂业务开发；\n
+                  5.在开发模式下，开启vuex的严格模式，在不是有mutation函数引起的状态变更，严格规定使用双向绑定的计算属性来变更状态；\n
+                  6.利用vue-router的路由钩子函数处理路由变化的相关业务处理；路由完成前获取数据，保证数据请求完成渲染页面。`
+            }
+          ]
+        },
+        {
+          system: "DUI系统",
+          name: "权限管理",
+          label: "permission",
+          des:
+            "DUI平台产品接入系统，基于vue开发。全链路开发智能语音交互产品...",
+          detail: [
+            {
+              type: "项目描述",
+              info:
+                "本项目是一个促销商品推荐网站的移动APP，使用vue+webpack构建的单页面应用，项目采用了vuex、vue-route、vue-resource以及ES6语法，采用组件化思想搭建整个项目，从而使组件高度复用，代码十分简洁。"
+            },
+            {
+              type: "岗位职责",
+              info:
+                "本项目是一个促销商品推荐网站的移动APP，使用vue+webpack构建的单页面应用，项目采用了vuex、vue-route、vue-resource以及ES6语法，采用组件化思想搭建整个项目，从而使组件高度复用，代码十分简洁。"
+            },
+            {
+              type: "项目架构",
+              info:
+                "本项目是一个促销商品推荐网站的移动APP，使用vue+webpack构建的单页面应用，项目采用了vuex、vue-route、vue-resource以及ES6语法，采用组件化思想搭建整个项目，从而使组件高度复用，代码十分简洁。"
+            },
+            {
+              type: "技术要求",
+              info:
+                "本项目是一个促销商品推荐网站的移动APP，使用vue+webpack构建的单页面应用，项目采用了vuex、vue-route、vue-resource以及ES6语法，采用组件化思想搭建整个项目，从而使组件高度复用，代码十分简洁。"
+            }
+          ]
+        },
+        {
+          system: "BEAF",
+          name: "个人网站",
+          label: "product",
+          des: "是一个关于个人信息及技术心得分享的网站...",
+          detail: [
+            {
+              type: "项目描述",
+              info:
+                "本项目是一个关于个人信息及技术心得分享的网站，使用vue+webpack构建的单页面应用，项目采用了vuex、vue-route、vue-resource以及ES6语法，采用组件化思想搭建整个项目"
+            },
+            {
+              type: "项目架构",
+              info: `1.使用vue+webpack构建项目环境，以及vuex、vue-router构建单页面应用；\n 
+                  2.引入了自己开发的ui组件库beaf-ui,实行个性化的ui组件；\n 
+                  3.使用element-ui作为项目开发ui组件库，开发公共通用组件；\n 
+                  4.使用阿里矢量图标库。`
+            },
+            {
+              type: "技术要求",
+              info: `1.项目是通过命令自动快速生成的项目，是由自己开发的一个自动化脚手架(create-beaf-app)完成
+                  2.webpack+webpack-dev-server搭建前端本地开发服务`
+            }
+          ]
+        },
+        {
+          system: "BEAF",
+          name: "工具库",
+          label: "product",
+          des: "实现前端开发的规范化，模块化，自动化，工程化",
+          detail: [
+            {
+              type: "前端架手架",
+              info:
+                "本项目是一个促销商品推荐网站的移动APP，使用vue+webpack构建的单页面应用，项目采用了vuex、vue-route、vue-resource以及ES6语法，采用组件化思想搭建整个项目，从而使组件高度复用，代码十分简洁。"
+            },
+            {
+              type: "ui组件库",
+              info:
+                "本项目是一个促销商品推荐网站的移动APP，使用vue+webpack构建的单页面应用，项目采用了vuex、vue-route、vue-resource以及ES6语法，采用组件化思想搭建整个项目，从而使组件高度复用，代码十分简洁。"
+            }
+          ]
         }
       ]
     };
