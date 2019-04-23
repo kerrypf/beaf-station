@@ -24,15 +24,28 @@
     <div class="content-section basic-content">
       <h2 class="content-title">基本信息</h2>
       <img src="/images/avatar.png" alt=" " class="img-avatar" />
+      <div class="top-contact">
+        <a href="https://github.com/kerrypf" target="_blank"
+          ><i class="iconfont beaf-github"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/%E5%9F%B9%E8%8A%B3-%E6%9D%A8-b74328154/"
+          target="_blank"
+          ><i class="iconfont beaf-linkedin0"></i
+        ></a>
+        <i class="iconfont beaf-wechat"></i>
+        <i class="iconfont beaf-qq"></i>
+      </div>
       <div class="wthree_tab_content">
         <ul class="info">
           <li><span class="title">姓名: </span>杨培芳</li>
           <li><span class="title">性别: </span>女</li>
           <li><span class="title">年龄: </span>26</li>
-          <li><span class="title">学历: </span>硕士</li>
-          <li><span class="title">毕业院校: </span>苏州大学</li>
-          <li><span class="title">专业: </span>物理专业</li>
           <li><span class="title">政治面貌: </span>中共党员</li>
+          <li><span class="title">毕业院校: </span>苏州大学</li>
+          <li><span class="title">毕业时间: </span>2017.06</li>
+          <li><span class="title">学历: </span>硕士</li>
+          <li><span class="title">专业: </span>物理专业</li>
           <li><span class="title">联系电话: </span>18351037935</li>
           <li>
             <span class="title">电子邮箱: </span
@@ -244,7 +257,7 @@
                   1.
                   按照需求设计独立完成页面；负责公司现有项目和新项目的前端修改调试和开发工作；<br />
                   2.
-                  利用D3.js开发公司各种可视化页面，开发自适应图表，如：树状图，柱状图，折线图，饼图，力导向图，环形图，思维导图等；<br />
+                  利用D3.js开发公司各种可视化页面，开发自定义图表（图表可配置），如：树状图，柱状图，折线图，饼图，力导向图，环形图，思维导图等；<br />
                   3. 利用模板引擎handlebars.js开发，实现组件化开发模式<br />
                 </div>
               </div>
@@ -314,12 +327,35 @@
           :key="i"
           class="project-detail-item"
         >
-          <span>{{ item.type }}：</span>
+          <span class="detail-title"
+            >{{ item.type }}：<a
+              v-if="item.name"
+              :href="item.data[1].addr"
+              style="color:#fe9300"
+              >{{ item.name }}</a
+            >
+          </span>
           <div class="detail-info">
-            <p v-for="(info, i) in item.info.split('\n')" :key="i">
-              {{ info }}
-            </p>
+            <template v-if="item.info">
+              <p v-for="(info, i) in item.info.split('\n')" :key="i">
+                {{ info }}
+              </p>
+            </template>
+            <a v-else :href="item.addr" class="detail-info">{{ item.addr }}</a>
           </div>
+          <template v-if="item.data">
+            <div v-for="(d, i) in item.data" :key="i" class="sub-item">
+              <span class="detail-title">{{ d.type }}：</span>
+              <div class="detail-info">
+                <template v-if="d.list">
+                  <p v-for="(l, i) in d.list.split('\n')" :key="i">
+                    {{ l }}
+                  </p>
+                </template>
+                <a v-else :href="d.addr" class="detail-info">{{ d.addr }}</a>
+              </div>
+            </div>
+          </template>
         </div>
       </div>
     </div>
@@ -332,8 +368,14 @@
         </p>
       </div>
       <div class="nav-contact">
-        <i class="iconfont beaf-github"></i>
-        <i class="iconfont beaf-linkedin0"></i>
+        <a href="https://github.com/kerrypf" target="_blank"
+          ><i class="iconfont beaf-github"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/%E5%9F%B9%E8%8A%B3-%E6%9D%A8-b74328154/"
+          target="_blank"
+          ><i class="iconfont beaf-linkedin0"></i
+        ></a>
         <i class="iconfont beaf-wechat"></i>
         <i class="iconfont beaf-qq"></i>
       </div>
@@ -360,20 +402,20 @@ export default {
             {
               type: "项目描述",
               info:
-                "产品接入项目，是DUI平台的语音产品可以理解成是多个应用的集合，用以实现复杂的语音交互功能，如满足用户导航，听音乐，查天气，看电影等方方面面的需求。开发者可以根据适用场景的需求来定制配置不同识别引擎和功能的产品。项目使用vue+webpack构建的单页面应用,采用了vuex、vue-route、element-ui、axios以及ES6+语法，采用组件化思想搭建整个项目，从而使组件高度复用。"
+                "项目由六人前端开发完成。开发者平台，即全链路智能对话开放平台，用以实现复杂的语音交互功能，如满足用户导航，听音乐，查天气，看电影等方方面面的需求。开发者可以根据适用场景的需求来定制配置不同识别引擎和功能的产品。项目使用vue+webpack构建的单页面应用,采用了vuex、vue-route、element-ui、axios以及ES6+语法，采用组件化思想搭建整个项目，从而使组件高度复用。"
             },
             {
               type: "岗位职责",
               info:
-                "主要负责项目架构设计，页面的布局和数据渲染，完成与后端的接口对接，配合后端的对接联调"
+                "主要负责项目架构设计，页面的布局和数据渲染，完成与后端的接口对接，配合后端的对接联调。主要负责平台的产品与技能的开发，独立完成产品列表，产品版本创建以及版本开发到版本发布等相关业务的页面开发；独立完成技能列表，技能创建以及技能开发到技能发布、上架、分享等相关业务的页面开发。"
             },
             {
               type: "项目架构",
               info: `1.使用vue+webpack构建项目环境，以及vuex、vue-router构建单页面应用；\n 
                   2.使用axios向后台发起请求，基于axios封装处理接口返回异常，数据结构处理，请求中断，请求超时；\n 
-                  2.使用element-ui作为项目开发ui组件库，并基于element-ui开发满足公司业务的公共通用组件；\n 
-                  3.使用node作为中间件，代理前端静态资源（js,css,image等），处理Token验证； \n 
-                  4.使用阿里矢量图标库。`
+                  3.使用element-ui作为项目开发ui组件库，并基于element-ui开发满足公司业务的公共通用组件；\n 
+                  4.使用node作为中间件，代理前端静态资源（js,css,image等），处理Token验证； \n 
+                  5.使用lodash工具库，实现业务数据的逻辑处理；使用阿里矢量图标库。`
             },
             {
               type: "开发技术",
@@ -396,22 +438,30 @@ export default {
             {
               type: "项目描述",
               info:
-                "本项目是一个促销商品推荐网站的移动APP，使用vue+webpack构建的单页面应用，项目采用了vuex、vue-route、vue-resource以及ES6语法，采用组件化思想搭建整个项目，从而使组件高度复用，代码十分简洁。"
+                "项目由我一个人独立完成。该项目是一个权限管理系统，针对DUI开发者平台的用户角色及类型设置权限"
             },
             {
               type: "岗位职责",
               info:
-                "本项目是一个促销商品推荐网站的移动APP，使用vue+webpack构建的单页面应用，项目采用了vuex、vue-route、vue-resource以及ES6语法，采用组件化思想搭建整个项目，从而使组件高度复用，代码十分简洁。"
+                "主要负责项目架构设计，页面的布局和数据渲染，完成与后端的接口对接，配合后端的对接联调。主要开发了权限系统创建，权限系统列表，开发者类型与角色对应关系，权限设置页面，及权限查询页面。"
             },
             {
               type: "项目架构",
-              info:
-                "本项目是一个促销商品推荐网站的移动APP，使用vue+webpack构建的单页面应用，项目采用了vuex、vue-route、vue-resource以及ES6语法，采用组件化思想搭建整个项目，从而使组件高度复用，代码十分简洁。"
+              info: `1.使用vue+webpack构建项目环境，以及vuex、vue-router构建单页面应用；\n 
+                  2.使用axios向后台发起请求，基于axios封装处理接口返回异常，数据结构处理，请求中断，请求超时；\n 
+                  3.使用element-ui作为项目开发ui组件库，开发公共通用组件；\n 
+                  4.使用lodash工具库，实现业务数据的逻辑处理；使用阿里矢量图标库。`
             },
             {
-              type: "技术要求",
-              info:
-                "本项目是一个促销商品推荐网站的移动APP，使用vue+webpack构建的单页面应用，项目采用了vuex、vue-route、vue-resource以及ES6语法，采用组件化思想搭建整个项目，从而使组件高度复用，代码十分简洁。"
+              type: "开发技术",
+              info: `1.项目是一个通过命令自动快速生成的项目，是由自己开发的一个自动化脚手架（create-aife-app, 公司前端内部脚手架）完成； \n
+                  2.webpack+webpack-dev-server搭建前端本地开发服务； \n
+                  3.使用Yapi作为后端接口管理，为前端提供mock数据；\n  
+                  4.node搭建前端本地开发服务，利用谷歌插件（Modify Header Value）、配合axios、node服务，实现项目同时代理到多环境，同一项目代理到不同域，提高本地开发效率，本地还原线上环境，快速定位bug等开发模式； \n
+                  5.使用lanhuapp管理和共享文档和设计图，为开发者提供可视化样式数据； \n
+                  6.利用vue的directive、mixins、model，实现复杂业务开发；\n
+                  7.在开发模式下，开启vuex的严格模式，在不是有mutation函数引起的状态变更，严格规定使用双向绑定的计算属性来变更状态；\n
+                  8.利用vue-router的路由钩子函数处理路由变化的相关业务处理；路由完成前获取数据，保证数据请求完成渲染页面。`
             }
           ]
         },
@@ -424,7 +474,7 @@ export default {
             {
               type: "项目描述",
               info:
-                "本项目是一个关于个人信息及技术心得分享的网站，使用vue+webpack构建的单页面应用，项目采用了vuex、vue-route、vue-resource以及ES6语法，采用组件化思想搭建整个项目"
+                "本项目是一个关于个人信息及技术心得分享的网站，使用vue+webpack构建的单页面应用，项目采用了vuex、vue-route、vue-resource以及ES6语法，采用组件化思想搭建整个项目。目前只完成了个人首页，其他页面正在开发中。"
             },
             {
               type: "项目架构",
@@ -434,9 +484,17 @@ export default {
                   4.使用阿里矢量图标库。`
             },
             {
-              type: "技术要求",
-              info: `1.项目是通过命令自动快速生成的项目，是由自己开发的一个自动化脚手架(create-beaf-app)完成
+              type: "开发技术",
+              info: `1.项目是一个通过命令自动快速生成的项目，是由自己开发的一个自动化脚手架(create-beaf-app)完成
                   2.webpack+webpack-dev-server搭建前端本地开发服务`
+            },
+            {
+              type: "git地址",
+              addr: `https://github.com/kerrypf/beaf-station`
+            },
+            {
+              type: "网站地址",
+              addr: `https://station.beaf.tech`
             }
           ]
         },
@@ -448,13 +506,37 @@ export default {
           detail: [
             {
               type: "前端架手架",
+              name: "create-beaf-app",
               info:
-                "本项目是一个促销商品推荐网站的移动APP，使用vue+webpack构建的单页面应用，项目采用了vuex、vue-route、vue-resource以及ES6语法，采用组件化思想搭建整个项目，从而使组件高度复用，代码十分简洁。"
+                "是一个基于CRA库修改的前端脚手架工具库，实现快速创建前端项目的工具，webpack零配置。版本一（create-aife-app）正在被公司内部项目使用。版本二基于版本一进行大版本的升级，从webpack3到webpack4的升级。",
+              data: [
+                {
+                  type: "开发技术",
+                  list: `1.webpack+webpack-dev-server搭建前端本地开发服务；\n
+                      2.本地服务配合谷歌插件(Modify Header Value)、axios，实现项目同时代理到多环境，同一项目代理到不同域的功能。`
+                },
+                {
+                  type: "git地址",
+                  addr: "https://github.com/kerrypf/create-beaf-app"
+                }
+              ]
             },
             {
               type: "ui组件库",
+              name: "beaf-ui",
               info:
-                "本项目是一个促销商品推荐网站的移动APP，使用vue+webpack构建的单页面应用，项目采用了vuex、vue-route、vue-resource以及ES6语法，采用组件化思想搭建整个项目，从而使组件高度复用，代码十分简洁。"
+                "本项目是一个促销商品推荐网站的移动APP，使用vue+webpack构建的单页面应用，项目采用了vuex、vue-route、vue-resource以及ES6语法，采用组件化思想搭建整个项目，从而使组件高度复用，代码十分简洁。",
+              data: [
+                {
+                  type: "开发技术",
+                  list: `1.webpack+webpack-dev-server搭建前端本地开发服务；\n
+                      2.本地服务配合谷歌插件(Modify Header Value)、axios，实现项目同时代理到多环境，同一项目代理到不同域的功能。`
+                },
+                {
+                  type: "git地址",
+                  addr: "https://github.com/kerrypf/beaf-ui"
+                }
+              ]
             }
           ]
         }
