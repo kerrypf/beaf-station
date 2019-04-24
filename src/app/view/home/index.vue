@@ -647,8 +647,6 @@ export default {
 }
 .content-section {
   padding: 30px;
-  // padding-left: calc(50% - 600px);
-  // padding-right: calc(50% - 600px);
   padding-left: calc(50% - 40%);
   padding-right: calc(50% - 40%);
   .content-title {
