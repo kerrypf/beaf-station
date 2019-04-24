@@ -33,8 +33,16 @@
           target="_blank"
           ><i class="iconfont beaf-linkedin0"></i
         ></a>
-        <i class="iconfont beaf-wechat"></i>
-        <i class="iconfont beaf-qq"></i>
+        <el-popover placement="bottom" title="微信" width="200" trigger="click">
+          <img src="/images/wechat.jpg" alt="" width="100%" />
+          <i class="iconfont beaf-wechat" slot="reference"></i>
+        </el-popover>
+        <el-popover placement="bottom" title="QQ" width="200" trigger="click">
+          <img src="/images/qq.jpg" alt="" width="100%" />
+          <i class="iconfont beaf-qq" slot="reference"></i>
+        </el-popover>
+        <!-- <i class="iconfont beaf-wechat"></i>
+        <i class="iconfont beaf-qq"></i> -->
       </div>
       <div class="wthree_tab_content">
         <ul class="info">
@@ -381,8 +389,14 @@
           target="_blank"
           ><i class="iconfont beaf-linkedin0"></i
         ></a>
-        <i class="iconfont beaf-wechat"></i>
-        <i class="iconfont beaf-qq"></i>
+        <el-popover placement="bottom" title="微信" width="200" trigger="click">
+          <img src="/images/wechat.jpg" alt="" width="100%" />
+          <i class="iconfont beaf-wechat" slot="reference"></i>
+        </el-popover>
+        <el-popover placement="bottom" title="QQ" width="200" trigger="click">
+          <img src="/images/qq.jpg" alt="" width="100%" />
+          <i class="iconfont beaf-qq" slot="reference"></i>
+        </el-popover>
       </div>
     </div>
   </div>
