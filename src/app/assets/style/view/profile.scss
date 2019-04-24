@@ -78,6 +78,13 @@
 .detail-content {
   background-color: #f1f2f3;
   color: #2a2e31;
+  .comments {
+    color: #666;
+    font-size: 15px;
+    line-height: 24px;
+    margin-top: 5px;
+    margin-left: 2px;
+  }
   .barWrapper {
     .progressText {
       font-size: 20px;
@@ -104,10 +111,16 @@
     }
   }
   .detail-list {
+    margin-top: 5px;
+    line-height: 25px;
     .points {
       .el-icon-success {
         color: #21aec0;
+        margin-right: 5px;
       }
+    }
+    > li {
+      margin-top: 5px;
     }
   }
 }

@@ -40,12 +40,13 @@
         <ul class="info">
           <li><span class="title">姓名: </span>杨培芳</li>
           <li><span class="title">性别: </span>女</li>
-          <li><span class="title">年龄: </span>26</li>
+          <li><span class="title">生日: </span>1993.01.01</li>
           <li><span class="title">政治面貌: </span>中共党员</li>
           <li><span class="title">毕业院校: </span>苏州大学</li>
           <li><span class="title">毕业时间: </span>2017.06</li>
           <li><span class="title">学历: </span>硕士</li>
           <li><span class="title">专业: </span>物理专业</li>
+          <li><span class="title">婚姻状况: </span>已婚</li>
           <li><span class="title">联系电话: </span>18351037935</li>
           <li>
             <span class="title">电子邮箱: </span
@@ -59,36 +60,45 @@
       <el-row :gutter="20">
         <el-col :span="12">
           <h3>对Web充满热情</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur Morbi sagittis, sem quisci
-            ipsum gravida tortor orci ipsum gravida tortor. Lorem ipsum dolor
-            sit amet, tortor orci ipsum gravida tortor. Lorem ipsum dolor sit
-            amet, conseconsectetur.
+          <p class="comments">
+            前端开发工程师,
+            3年前端开发经验。主要从事PC端web页面开发，能够独立架构和开发中小型高质量及可维护的前端项目。
+            追求高质量代码，不断优化现有技术栈，力求最优解。注重开发效率，开发可高度复用的组件。不断学习新技术，敢于挑战。
           </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur Morbi sagittis, sem quisci
-            ipsum gravida tortor orci ipsum gravida tortor.
+          <p class="comments">
+            具有较强学习能力，善于专研，做事细致，有耐心，毅力强。曾获得过校一等奖学金，湖南省物理竞赛二等奖，校海报比赛二等奖等。
           </p>
           <ul class="detail-list">
             <li class="points">
-              <i class="el-icon-success"></i>Consectetur Morbi sagittis, sem
-              quisci ipsum gravida tortor
+              <i class="el-icon-success"></i
+              >熟练掌握原生javascript的前端开发，应用 javascript 高级语法 es6,
+              es7,
+              正逐步减少工具类库的使用。熟练运用jquery进行前端开发，掌握数据可视化
+              d3.js 图表库、handlerbars.js模板引擎开发，
             </li>
             <li class="points">
-              <i class="el-icon-success"></i>Morbi sagittis, sem quis lacinia
-              faucibus, orci ipsum gravida
+              <i class="el-icon-success"></i
+              >vue前端开发框架的重度使用者，熟练运用vue、vuex、vue-router等开发web页面。熟练掌握axios工具向后端发起请求，并对请求进行拦截，中断，超时，及响应预处理。了解react，运用react开发过个人微小型项目。
             </li>
             <li class="points">
-              <i class="el-icon-success"></i>Lorem ipsum dolor sit amet,
-              consectetur Morbi sagittis, sem quisci gravida
+              <i class="el-icon-success"></i>掌握div+css 布局响应式页面
             </li>
             <li class="points">
-              <i class="el-icon-success"></i>Sagittis, sem quis lacinia
-              faucibus, orci ipsum gravida
+              <i class="el-icon-success"></i
+              >深度使用element-ui开发web页面，了解bootstrap、antd
             </li>
             <li class="points">
-              <i class="el-icon-success"></i>Ipsum dolor sit amet, consectetur
-              Morbi sagittis, sem quisci
+              <i class="el-icon-success"></i
+              >熟悉gulp,webpack,rollup前端构建工具的使用
+            </li>
+            <li class="points">
+              <i class="el-icon-success"></i
+              >了解node.js相关的前端构建知识，会使用node.js(express)创建 Web
+              应用
+            </li>
+            <li class="points">
+              <i class="el-icon-success"></i
+              >熟练掌握photoshop相关技术，有一定的设计和审美力
             </li>
           </ul>
         </el-col>
@@ -211,15 +221,16 @@
               <div class="qa-message-item">
                 <span>工作描述：</span>
                 <div class="qa-info">
-                  1.
-                  根据需求文档和设计稿，开发PC端单页面应用；负责公司现有项目和新项目的前端修改调试和开发工作；<br />
+                  1. 公司内部ui组件库开发的发起人；<br />
                   2.
+                  根据需求文档和设计稿，开发PC端单页面应用；负责公司现有项目和新项目的前端修改调试和开发工作；<br />
+                  3.
                   与设计团队、后端开发团队紧密配合，与设计团队共同制定页面样式规范，与后端开发团队商讨api返回数据结构；<br />
-                  3. 与运维团队配合，实施前端项目部署；<br />
-                  4. 作为前端开发主导，理解迭代需求，分配任务；<br />
-                  5.
-                  在公司内部制定前端编程规范，完善前端框架；制定公司内部分支及版本管理规范，方便维护，并避免由于维护造成的错误的版本发布等问题；<br />
+                  4. 与运维团队配合，实施前端项目部署；<br />
+                  5. 作为前端开发主导，理解迭代需求，分配任务；<br />
                   6.
+                  在公司内部制定前端编程规范，完善前端框架；制定公司内部分支及版本管理规范，方便维护，并避免由于维护造成的错误的版本发布等问题；<br />
+                  7.
                   负责公司内部组件库开发，全局功能开发；封装Axios对后端接口做异常处理和数据处理，及相关业务处理；推进前端工程化和自动化。<br />
                 </div>
               </div>
@@ -407,7 +418,7 @@ export default {
             {
               type: "岗位职责",
               info:
-                "主要负责项目架构设计，页面的布局和数据渲染，完成与后端的接口对接，配合后端的对接联调。主要负责平台的产品与技能的开发，独立完成产品列表，产品版本创建以及版本开发到版本发布等相关业务的页面开发；独立完成技能列表，技能创建以及技能开发到技能发布、上架、分享等相关业务的页面开发。"
+                "公司内部ui组件库的发起人和负责人。主要负责项目架构设计，页面的布局和数据渲染，完成与后端的接口对接，配合后端的对接联调。主要负责平台的产品与技能的开发，独立完成产品列表，产品版本创建以及版本开发到版本发布等相关业务的页面开发；独立完成技能列表，技能创建以及技能开发到技能发布、上架、分享等相关业务的页面开发。"
             },
             {
               type: "项目架构",
@@ -419,12 +430,11 @@ export default {
             },
             {
               type: "开发技术",
-              info: `1.使用Yapi作为后端接口管理，为前端提供mock数据；\n  
-                  2.node搭建前端本地开发服务，利用谷歌插件(Modify Header Value)、配合axios、node服务，实现项目同时代理到多环境，同一项目代理到不同域，提高本地开发效率，本地还原线上环境，快速定位bug等开发模式； \n
-                  3.使用lanhuapp管理和共享文档和设计图，为开发者提供可视化样式数据； \n
-                  4.利用vue的directive、mixins、model，实现复杂业务开发；\n
-                  5.在开发模式下，开启vuex的严格模式，在不是有mutation函数引起的状态变更，严格规定使用双向绑定的计算属性来变更状态；\n
-                  6.利用vue-router的路由钩子函数处理路由变化的相关业务处理；路由完成前获取数据，保证数据请求完成渲染页面。`
+              info: `1.node搭建前端本地开发服务，利用谷歌插件(Modify Header Value)、配合axios、node服务，实现项目同时代理到多环境，同一项目代理到不同域，提高本地开发效率，本地还原线上环境，快速定位bug等开发模式； \n
+                  2.使用Yapi作为后端接口管理，为前端提供mock数据；使用lanhuapp管理和共享文档和设计图，为开发者提供可视化样式数据； \n
+                  3.利用vue的directive、mixins、model，实现复杂业务开发；\n
+                  4.在开发模式下，开启vuex的严格模式，在不是有mutation函数引起的状态变更，严格规定使用双向绑定的计算属性来变更状态；\n
+                  5.利用vue-router的路由钩子函数处理路由变化的相关业务处理；路由完成前获取数据，保证数据请求完成渲染页面。`
             }
           ]
         },
