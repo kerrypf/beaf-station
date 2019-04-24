@@ -396,7 +396,6 @@ export default {
   data() {
     return {
       activeIndex: "1",
-      // coverLeft: "95px",
       projectIndex: 0,
       coverLeft: ["95px", "395px", "695px", "995px"],
       projectList: [
