@@ -58,7 +58,7 @@
     </div>
     <div class="content-section detail-content">
       <el-row :gutter="20">
-        <el-col :span="12">
+        <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="12">
           <h3>对Web充满热情</h3>
           <p class="comments">
             前端开发工程师,
@@ -102,7 +102,7 @@
             </li>
           </ul>
         </el-col>
-        <el-col :span="12">
+        <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="12">
           <div class="barWrapper">
             <p class="progressText">
               Javascript <label>es6</label><label>vue</label><label>react</label
@@ -283,40 +283,36 @@
       <div class="project-container">
         <div
           class="project-item"
-          :class="item.label"
           v-for="(item, i) in projectList"
           :key="i"
           @mouseenter="projectIndex = i"
         >
-          <div class="item-mask"></div>
-          <h2>
-            {{ item.system }} <span>{{ item.name }}</span>
-          </h2>
-          <p>{{ item.des }}</p>
+          <div class="project-item-box" :class="item.label">
+            <img src="/images/pro_item.png" alt="" />
+            <div class="item-text">
+              <h2>
+                {{ item.system }} <span>{{ item.name }}</span>
+              </h2>
+              <p>{{ item.des }}</p>
+            </div>
+          </div>
+          <!-- <div class="item-mask"></div> -->
         </div>
       </div>
       <div class="project-tab">
-        <span
-          @click="projectIndex = 0"
-          :class="{ active: coverLeft[projectIndex] === '95px' }"
+        <span @click="projectIndex = 0" :class="{ active: projectIndex === 0 }"
           >开发者平台</span
         >
-        <span
-          @click="projectIndex = 1"
-          :class="{ active: coverLeft[projectIndex] === '395px' }"
+        <span @click="projectIndex = 1" :class="{ active: projectIndex === 1 }"
           >权限系统</span
         >
-        <span
-          @click="projectIndex = 2"
-          :class="{ active: coverLeft[projectIndex] === '695px' }"
+        <span @click="projectIndex = 2" :class="{ active: projectIndex === 2 }"
           >个人网站</span
         >
-        <span
-          @click="projectIndex = 3"
-          :class="{ active: coverLeft[projectIndex] === '995px' }"
+        <span @click="projectIndex = 3" :class="{ active: projectIndex === 3 }"
           >工具库</span
         >
-        <div class="cover" :style="{ left: coverLeft[projectIndex] }">
+        <div class="cover" :style="{ left: getCoverLeft() }">
           <div class="cover-top"></div>
           <div class="cover-bottom">
             <div class="left-cover">
@@ -405,6 +401,7 @@ export default {
       coverLeft: ["95px", "395px", "695px", "995px"],
       projectList: [
         {
+          img: "/images/pro_item.png",
           system: "DUI系统",
           name: "开发者平台",
           label: "product",
@@ -559,7 +556,16 @@ export default {
         id: 1231
       });
     },
-    handleSelect() {}
+    handleSelect() {},
+    getCoverLeft() {
+      const n = this.projectIndex + 1;
+      const e = 1 / 4;
+      const m = 1 / 8;
+
+      const left = (n * (1 / 4) - 1 / 8) * 100;
+      console.log(left, "nnnnnnnn");
+      return left + "%";
+    }
   },
   mounted() {
     particlesJS("particles-js", particles, function() {
@@ -641,8 +647,10 @@ export default {
 }
 .content-section {
   padding: 30px;
-  padding-left: calc(50% - 600px);
-  padding-right: calc(50% - 600px);
+  // padding-left: calc(50% - 600px);
+  // padding-right: calc(50% - 600px);
+  padding-left: calc(50% - 40%);
+  padding-right: calc(50% - 40%);
   .content-title {
     text-align: center;
     margin: 20px 0;
