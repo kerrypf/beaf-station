@@ -589,7 +589,7 @@ export default {
 <style lang="scss" scoped>
 .banner-container {
   position: relative;
-  height: 680px;
+  // height: 680px;
   background: #2a2e31;
   .top-nav {
     position: relative;
@@ -623,14 +623,14 @@ export default {
     > h1 {
       color: #fefefe;
       font-family: Heroes, Proxima Nova, Helvetica, Roboto, sans-serif;
-      font-size: 4.5rem;
-      line-height: 1.35;
+      // font-size: 4.5rem;
+      // line-height: 1.35;
       opacity: 1;
       text-align: center;
       text-shadow: 0 0 40px hsla(0, 0%, 100%, 0.75);
-      line-height: 120px;
+      // line-height: 120px;
       > span {
-        font-size: 6.5rem;
+        // font-size: 6.5rem;
         font-family: Heroes, Proxima Nova, Helvetica, Roboto, sans-serif;
       }
     }
