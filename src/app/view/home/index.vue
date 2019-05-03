@@ -589,7 +589,6 @@ export default {
 <style lang="scss" scoped>
 .banner-container {
   position: relative;
-  // height: 680px;
   background: #2a2e31;
   .top-nav {
     position: relative;
