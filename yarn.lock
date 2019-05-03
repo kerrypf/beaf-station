@@ -1220,10 +1220,10 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
-beaf-scripts@^0.0.35:
-  version "0.0.35"
-  resolved "https://registry.npmjs.org/beaf-scripts/-/beaf-scripts-0.0.35.tgz#045c8b67e5db1da050f15b8a6cb018352cd0578f"
-  integrity sha512-gMaXnPTaK5+Tz7H7hDHA/ST52M6sQc/SLiU55k1PjTN5jPpywU6KKgNIGFvcSSrEBmm56pemHGmOzz5LAGbJ3A==
+beaf-scripts@^0.0.36:
+  version "0.0.36"
+  resolved "https://registry.npmjs.org/beaf-scripts/-/beaf-scripts-0.0.36.tgz#7a174b5f3dc776b59c0a40c835a42a8cb4d86f17"
+  integrity sha512-IH+Sx7r/F14Z32v8xEwb6ppoo/qDrzuJngf1xbaIUffyneC6Nec+MLN9oWobDeYANsbHlXbFHya2YxInW0vY5Q==
   dependencies:
     autoprefixer "^9.5.1"
     babel-core "^6.26.3"
