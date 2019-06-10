@@ -49,7 +49,7 @@ class Req {
 }
 
 /**
- * 保留最后一次的请求
+ * 保留最后一次的请求（例：翻页）
  * @param {string} url
  */
 function handleReqLast(type, api, params, data) {
@@ -65,7 +65,7 @@ function handleReqLast(type, api, params, data) {
 }
 
 /**
- * 保留第一次的请求
+ * 保留第一次的请求（例：按钮快速点击多次）
  * @param {string} url
  */
 function handleReq(type, api, params, data) {
