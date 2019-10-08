@@ -1,8 +1,24 @@
 const isLocal = process.env.VUE_ENV === "client";
 const base = {
-  root: "",
   user_info_get: {
-    url: "permission/authentication/qualify/basic/info"
+    url: "https://www.duiopen.com/console/api/v1.0/business/coin/acctinfo"
+  },
+  skill_delete: {
+    url: "https://www.duiopen.com/skill/delete?skillId={skillId}",
+    abort: true
+  },
+  skill_create: {
+    url: "https://www.duiopen.com/skill/create",
+    abort: true
+  },
+  test_status_code: {
+    url: "http://localhost:3000/system/list"
+  },
+  tes2t_status_code: {
+    url: "http://localhost:3000/system/list"
+  },
+  tes3t_status_code: {
+    url: "http://localhost:3000/system/list"
   }
 };
 const mock = isLocal

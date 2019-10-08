@@ -393,10 +393,34 @@
         </el-popover>
       </div>
     </div>
+
+    <!-- <div id="userList"> 
+      <ul class="contextmenu">
+        <li class="enabled">
+          <span><a>color1</a></span>
+          
+        </li>
+        <li>
+          <span><a>color2</a></span>
+          
+        </li>
+      </ul>
+22222
+    </div> -->
+    <div class="testbox">
+      <span
+        >Access-Control-Allow-Origin爱摄房价各方阿尔冯引入鹅服鳄鱼肉Access-Control-Allow-OriginAccess-Control-Allow-OriginAccess-Control-Allow-OriginAccess-Control-Allow-Origin合肥人</span
+      >
+    </div>
+    <!-- <el-button @click="getEvent">getqq</el-button>
+    <el-button @click="deleteEvent">delete</el-button>
+    <el-button @click="postEvent">post</el-button>
+    <el-button @click="testStatusCode">test</el-button> -->
   </div>
 </template>
 <script>
 import service from "../../service";
+console.log(service.common.get, "service");
 import particles from "../../assets/particles.json";
 export default {
   data() {
@@ -557,10 +581,40 @@ export default {
     };
   },
   methods: {
-    getUser() {
-      service.common.get("user_info_get", {
-        id: 1231
+    testStatusCode() {
+      service.common.test_status_code.get().then(res => {
+        console.log("service.common.");
       });
+    },
+
+    deleteEvent() {
+      service.common
+        .delete(
+          "skill_delete",
+          {
+            skillId: 1231
+          },
+          {
+            body: "ypf"
+          }
+        )
+        .then(res => {
+          console.log(res, "delete");
+        });
+    },
+    getEvent() {
+      service.common.get("user_info_get").then(res => {
+        console.log(res, "get");
+      });
+    },
+    postEvent() {
+      service.common
+        .post("skill_create", {
+          id: 1231
+        })
+        .then(res => {
+          console.log(res, "delete");
+        });
     },
     handleSelect() {},
     getCoverLeft() {
@@ -581,6 +635,37 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.testbox {
+  width: 500px;
+  position: relative;
+  line-height: 1.4em;
+  /* 3 times the line-height to show 3 lines */
+  height: 4.2em;
+  overflow: hidden;
+  word-break: break-all;
+  &::after {
+    content: "...";
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0 20px 1px 45px;
+    background-color: #fff;
+  }
+}
+#userList {
+  height: 500px;
+}
+#userList .contextmenu {
+  position: sticky;
+  top: 50px;
+}
+#userList .contextmenu li.enabled a {
+  color: red;
+}
+div#userList ul.contextmenu li span a {
+  color: blue;
+}
 .banner-container {
   position: relative;
   // height: 680px;

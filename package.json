@@ -34,7 +34,7 @@
   },
   "proxy": {
     "/*": {
-      "target": "https://beta.dui.ai",
+      "target": "localhost:3001",
       "secure": true,
       "changeOrigin": true,
       "pathRewrite": {
