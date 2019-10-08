@@ -3,12 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
-  "lint-staged": {
-    "**/*.{js,json,md,scss,vue}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
   "dependencies": {
     "axios": "0.18.0",
     "beaf-scripts": "^0.0.36",
@@ -25,8 +19,7 @@
   "scripts": {
     "start": "PORT=3001 create-beaf-app start",
     "build": "create-beaf-app build",
-    "server:mock": "json-server --watch mock/index.js --port 8081",
-    "precommit": "lint-staged"
+    "server:mock": "json-server --watch mock/index.js --port 8081"
   },
   "proxy": {
     "/*": {
