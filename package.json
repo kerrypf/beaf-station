@@ -3,11 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "**/*.{js,json,md,scss,vue}": [
       "prettier --write",
@@ -30,7 +25,8 @@
   "scripts": {
     "start": "PORT=3001 create-beaf-app start",
     "build": "create-beaf-app build",
-    "server:mock": "json-server --watch mock/index.js --port 8081"
+    "server:mock": "json-server --watch mock/index.js --port 8081",
+    "precommit": "lint-staged"
   },
   "proxy": {
     "/*": {
