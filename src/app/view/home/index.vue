@@ -3,18 +3,18 @@
     <div class="banner-container">
       <div class="top-nav">
         <!-- <img src="/logo.png" alt="" />
-        <el-menu
-          :default-active="activeIndex"
-          background-color="transparent"
-          class="beaf-el-menu"
-          mode="horizontal"
-          @select="handleSelect"
-        >
-          <el-menu-item index="1">首页</el-menu-item>
-          <el-menu-item index="2">生活服务</el-menu-item>
-          <el-menu-item index="3">工作空间</el-menu-item>
-        </el-menu>
-        <el-button type="text">博客</el-button> -->
+            <el-menu
+              :default-active="activeIndex"
+              background-color="transparent"
+              class="beaf-el-menu"
+              mode="horizontal"
+              @select="handleSelect"
+            >
+              <el-menu-item index="1">首页</el-menu-item>
+              <el-menu-item index="2">生活服务</el-menu-item>
+              <el-menu-item index="3">工作空间</el-menu-item>
+            </el-menu>
+            <el-button type="text">博客</el-button> -->
       </div>
       <div class="banner-title">
         <h1><span>Coding</span>,<br />Be a front-end</h1>
