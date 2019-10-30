@@ -8,8 +8,9 @@ import Vuex from "vuex";
 import { render } from "./app";
 import modules1 from "./app/model/vuex/modules/test";
 import modules2 from "./app/model/vuex/modules/common";
+import { Table } from "ant-design-vue";
 
-// console.log(service,render)
+console.log(Table, "antVueantVue");
 Vue.use(Vuex);
 new Vuex.Store({
   modules: {

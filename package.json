@@ -3,7 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,json,md,scss,vue}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "dependencies": {
+    "ant-design-vue": "^1.3.17",
     "axios": "0.18.0",
     "beaf-scripts": "^0.0.36",
     "element-ui": "2.5.4",
