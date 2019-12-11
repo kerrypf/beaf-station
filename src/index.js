@@ -1,7 +1,8 @@
 import service from "./app/service";
 // import store from "./app/model/vuex";
 import router from "./app/router";
-// service.common.get('user_info_get')
+service.common.user_info_get.get("user_info_get");
+console.log(service, "service");
 
 import Vue from "vue";
 import Vuex from "vuex";

@@ -1,7 +1,10 @@
 const isLocal = process.env.VUE_ENV === "client";
 const base = {
   user_info_get: {
-    url: "https://www.duiopen.com/console/api/v1.0/business/coin/acctinfo"
+    url: "https://www.duiopen.com/console/api/v1.0/business/coin/acctinfo",
+    config: {
+      headers: { "X-Requested-With": "XMLHttpRequest" }
+    }
   },
   skill_delete: {
     url: "https://www.duiopen.com/skill/delete?skillId={skillId}",
