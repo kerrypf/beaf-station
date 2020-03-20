@@ -17,4 +17,6 @@ axios.handlerResErr = errData => {
   // console.log(errData,'errData')
 };
 export default core;
-export { axios };
+export {
+  axios
+ };

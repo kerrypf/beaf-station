@@ -1,7 +1,7 @@
 const isLocal = process.env.VUE_ENV === "client";
 const base = {
   user_info_get: {
-    url: "https://www.duiopen.com/console/api/v1.0/business/coin/acctinfo",
+    url: "http://10.254.10.118:3042/fgm/fm/rule/alarm/board/rule/user/check?userId=wjmboard",
     config: {
       headers: { "X-Requested-With": "XMLHttpRequest" }
     }

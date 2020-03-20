@@ -1,755 +1,437 @@
 <template>
-  <div>
-    <div class="banner-container">
-      <div class="top-nav">
-        <!-- <img src="/logo.png" alt="" />
-            <el-menu
-              :default-active="activeIndex"
-              background-color="transparent"
-              class="beaf-el-menu"
-              mode="horizontal"
-              @select="handleSelect"
-            >
-              <el-menu-item index="1">首页</el-menu-item>
-              <el-menu-item index="2">生活服务</el-menu-item>
-              <el-menu-item index="3">工作空间</el-menu-item>
-            </el-menu>
-            <el-button type="text">博客</el-button> -->
+<div>
+  <div class="page page1">
+    <span class="cvHeader">
+      <div class="leftTitle">
+        <p class="mainTitle">个人简历</p>
+        <p>VITAE</p>
       </div>
-      <div class="banner-title">
-        <h1><span>Coding</span>,<br />Be a front-end</h1>
-      </div>
-      <div id="particles-js"></div>
-    </div>
-    <div class="content-section basic-content">
-      <h2 class="content-title">基本信息</h2>
-      <img src="/images/avatar.png" alt=" " class="img-avatar" />
-      <div class="top-contact">
-        <a href="https://github.com/kerrypf" target="_blank"
-          ><i class="iconfont beaf-github"></i
-        ></a>
-        <a
-          href="https://www.linkedin.com/in/%E5%9F%B9%E8%8A%B3-%E6%9D%A8-b74328154/"
-          target="_blank"
-          ><i class="iconfont beaf-linkedin0"></i
-        ></a>
-        <el-popover placement="bottom" title="微信" width="200" trigger="click">
-          <img src="/images/wechat.jpg" alt="" width="100%" />
-          <i class="iconfont beaf-wechat" slot="reference"></i>
-        </el-popover>
-        <el-popover placement="bottom" title="QQ" width="200" trigger="click">
-          <img src="/images/qq.jpg" alt="" width="100%" />
-          <i class="iconfont beaf-qq" slot="reference"></i>
-        </el-popover>
-        <!-- <i class="iconfont beaf-wechat"></i>
-        <i class="iconfont beaf-qq"></i> -->
-      </div>
-      <div class="wthree_tab_content">
-        <ul class="info">
-          <li><span class="title">姓名: </span>杨培芳</li>
-          <li><span class="title">性别: </span>女</li>
-          <li><span class="title">生日: </span>1993.01.01</li>
-          <li><span class="title">政治面貌: </span>中共党员</li>
-          <li><span class="title">毕业院校: </span>苏州大学</li>
-          <li><span class="title">毕业时间: </span>2017.06</li>
-          <li><span class="title">学历: </span>硕士</li>
-          <li><span class="title">专业: </span>物理专业</li>
-          <li><span class="title">婚姻状况: </span>已婚</li>
-          <li><span class="title">联系电话: </span>18351037935</li>
-          <li>
-            <span class="title">电子邮箱: </span
-            ><a href="mailto:kerrypf@foxmail.com">kerrypf@foxmail.com</a>
-          </li>
-          <li><span class="title">通讯地址: </span>江苏省苏州市苏州工业园区</li>
-        </ul>
-      </div>
-    </div>
-    <div class="content-section detail-content">
-      <el-row :gutter="20">
-        <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="12">
-          <h3>对Web充满热情</h3>
-          <p class="comments">
-            前端开发工程师,
-            3年前端开发经验。主要从事PC端web页面开发，能够独立创建中小型web前端应用项目。喜欢逛github，学习优秀开源项目。学习前端前沿技术，优化现有技术栈。开发效率，代码复用性、可读性和可维护性，一直是我在前端开发过程中坚持的原则。注重代码规范，追求代码的高内聚低耦合。
-          </p>
-          <p class="comments">
-            具有较强学习能力，善于专研，做事细致，有耐心，毅力强。曾获得过校一等奖学金，湖南省物理竞赛二等奖，校海报比赛二等奖等。
-          </p>
-          <ul class="detail-list">
-            <li class="points">
-              <i class="el-icon-success"></i
-              >熟练掌握原生javascript的前端开发，使用 javascript 高级语法
-              es6+进行开发，减少使用第三方工具库。熟练运用jquery进行前端开发，掌握数据可视化
-              d3.js 图表库、handlerbars.js模板引擎开发，
-            </li>
-            <li class="points">
-              <i class="el-icon-success"></i
-              >vue前端开发框架的重度使用者，熟练运用vue、vuex、vue-router等开发web页面。熟练掌握axios工具向后端发起请求，并对请求进行拦截，中断，超时，及响应预处理。了解react，运用react开发过个人微小型项目
-            </li>
-            <li class="points">
-              <i class="el-icon-success"></i>掌握div+css
-              布局响应式页面，掌握flexbox弹性盒子模型进行布局
-            </li>
-            <li class="points">
-              <i class="el-icon-success"></i
-              >深度使用element-ui开发web页面，了解bootstrap、antd
-            </li>
-            <li class="points">
-              <i class="el-icon-success"></i
-              >熟悉gulp,webpack,rollup前端构建工具的使用
-            </li>
-            <li class="points">
-              <i class="el-icon-success"></i
-              >了解node.js相关的前端构建知识，会使用node.js(express)创建 Web
-              应用
-            </li>
-            <li class="points">
-              <i class="el-icon-success"></i
-              >熟练掌握photoshop相关技术，有一定的设计和审美力
-            </li>
-          </ul>
-        </el-col>
-        <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="12">
-          <div class="barWrapper">
-            <p class="progressText">
-              Javascript <label>es6</label><label>vue</label><label>react</label
-              ><label>jquery</label>
-            </p>
-            <el-progress
-              color="#21AEC0"
-              :showText="false"
-              :stroke-width="12"
-              :percentage="90"
-            ></el-progress>
-          </div>
-
-          <div class="barWrapper">
-            <p class="progressText">
-              CSS <label>css3</label><label>sass</label><label>less</label>
-            </p>
-            <el-progress
-              color="#21AEC0"
-              :showText="false"
-              :stroke-width="12"
-              :percentage="80"
-            ></el-progress>
-          </div>
-
-          <div class="barWrapper">
-            <p class="progressText">
-              Html <label>html5</label><label>hbs</label>
-            </p>
-            <el-progress
-              color="#21AEC0"
-              :showText="false"
-              :stroke-width="12"
-              :percentage="70"
-            ></el-progress>
-          </div>
-          <div class="barWrapper">
-            <p class="progressText">
-              Build <label>webpack</label><label>rollup</label
-              ><label>gulp</label>
-            </p>
-            <el-progress
-              color="#21AEC0"
-              :showText="false"
-              :stroke-width="12"
-              :percentage="85"
-            ></el-progress>
-          </div>
-          <div class="barWrapper">
-            <p class="progressText">SVG <label>d3</label></p>
-            <el-progress
-              color="#21AEC0"
-              :showText="false"
-              :stroke-width="12"
-              :percentage="70"
-            ></el-progress>
-          </div>
-          <div class="barWrapper">
-            <p class="progressText">NodeJs</p>
-            <el-progress
-              color="#21AEC0"
-              :showText="false"
-              :stroke-width="12"
-              :percentage="60"
-            ></el-progress>
-          </div>
-          <div class="barWrapper">
-            <p class="progressText">
-              UI DESIGN <label>elment-ui</label><label>bootstrap</label
-              ><label>antd</label>
-            </p>
-            <el-progress
-              color="#21AEC0"
-              :showText="false"
-              :stroke-width="12"
-              :percentage="50"
-            ></el-progress>
-          </div>
-          <div class="barWrapper">
-            <p class="progressText">Photoshop</p>
-            <el-progress
-              color="#21AEC0"
-              :showText="false"
-              :stroke-width="12"
-              :percentage="80"
-            ></el-progress>
-          </div>
-        </el-col>
-      </el-row>
-    </div>
-    <div class="content-section experience-content">
-      <h2 class="content-title">工作经验</h2>
-      <div class="qa-message-list" id="wallmessages">
-        <div class="message-item" id="m16">
-          <div class="message-inner">
-            <div class="message-head clearfix">
-              <div class="user-detail">
-                <h5 class="handle">苏州思必驰信息科技有限公司</h5>
-                <div class="post-meta">
-                  <div class="asker-meta">
-                    <span class="qa-message-what"></span>
-                    <span class="qa-message-when">
-                      <span class="qa-message-when-data">2017.05 ~ 至今</span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="qa-message-content">
-              <div class="qa-message-item">
-                <span>工作岗位：</span>
-                <div class="qa-info">
-                  前端开发工程师
-                </div>
-              </div>
-              <div class="qa-message-item">
-                <span>工作描述：</span>
-                <div class="qa-info">
-                  1.开发PC端单页面应用；负责公司现DUI开发者平台系统的开发；<br />
-                  2.制定前端编程规范，完善前端框架；制定公司内部分支及版本管理规范；<br />
-                  3.开发前端自动化脚手架，公司内部ui组件库开发的发起人；负责公司内部组件库开发，全局功能开发，开发公共工具库；封装Axios对后端接口做异常处理和数据处理，及相关业务处理；<br />
-                  4.建立公司npm私有仓库<br />
-                </div>
-              </div>
-            </div>
+      <div class="rightContact">
+        <p>杨培芳</p>
+        <div class="contactBox">
+          <div v-for="(item, i) in contactInfo" :key="i">
+            <i class="iconfont" :class="[item.icon]"></i>
+            <span class="contactDetail">
+              <label>{{item.label}}:<br/></label>{{item.value}}
+            </span>
           </div>
         </div>
-
-        <div class="message-item" id="m9">
-          <div class="message-inner">
-            <div class="message-head clearfix">
-              <div class="user-detail">
-                <h5 class="handle">苏州优圣美智能系统有限公司</h5>
-                <div class="post-meta">
-                  <div class="asker-meta">
-                    <span class="qa-message-what"></span>
-                    <span class="qa-message-when">
-                      <span class="qa-message-when-data"
-                        >2016.07 ~ 2017.04</span
-                      >
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="qa-message-content">
-              <div class="qa-message-item">
-                <span>工作岗位：</span>
-                <div class="qa-info">
-                  前端开发工程师
-                </div>
-              </div>
-              <div class="qa-message-item">
-                <span>工作描述：</span>
-                <div class="qa-info">
-                  1.
-                  按照需求设计独立完成页面；负责公司机器学习系统的前端修改调试和开发工作；<br />
-                  2.
-                  利用D3.js开发公司各种可视化页面，开发自定义图表（图表可配置），如：树状图，柱状图，折线图，饼图，力导向图，环形图，思维导图等；<br />
-                  3. 利用模板引擎handlebars.js开发，实现组件化开发模式<br />
-                </div>
-              </div>
+      </div>
+      <div class="imageBox">
+        <img src="../../assets/images/vator.jpg" >
+      </div>
+    </span>
+    <div class="leftContent">
+      <div>
+        <p class="moduleTitle">基本信息</p>
+        <div class="detailForm">
+          <div v-for="(item, i) in basicInfo" :key="i">
+            <label>{{item.label}}: </label><span>{{item.value}}</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="moduleTitle">求职意向</p>
+        <div class="detailForm">
+          <div v-for="(item, i) in jobIntension" :key="i">
+            <label>{{item.label}}: </label><span>{{item.value}}</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="moduleTitle">教育背景</p>
+        <div class="detailForm">
+          <div v-for="(item, i) in eduBackground" :key="i">
+            <label>{{item.label}}: </label><span>{{item.value}}</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="moduleTitle">自我评价</p>
+        <div class="detailForm">具有较强学习能力，善于专研，做事细致，有耐心，毅力强，有较强的抗压能力；善于沟通，对项目开发有较深的理解；讲求效率，坚持做对的事情。能把事情既快有好的完成。</div>
+      </div>
+    </div>
+    <div class="rightContent">
+      <div>
+        <p class="moduleTtitle">工作技能</p>
+        <div class="moduleContent">
+          <span class="subContent">主要从事PC端web页面开发，能够独立架构和开发中小型高质量及可维护的前端项目。深刻理解数据驱动视图，懂得如何将数据与视图分离。追求高质量代码, 不断优化现有技术栈。曾获得过校一等奖学金，湖南省物理竞赛二等奖，校海报比赛二等奖等。</span>
+          <div class="mainContent">
+            <p v-for="(item, index) in skills" :key="index">{{index+1}}. {{item}}</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="moduleTtitle">工作经验</p>
+        <div v-for="(item, i) in workExperience" :key="i" class="moduleDetail">
+          <label>{{item.name}}<span>{{item.rangTime}}</span></label>
+          <div>
+            <span>工作描述：</span><span class="post">{{item.post}}</span>
+            <div>
+              <p v-for="(li, index) in item.des" :key="index">{{index+1}}. {{li}}</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="content-section project-content">
-      <div class="project-mask"></div>
-      <h2 class="content-title">项目经验</h2>
-      <div class="project-container">
-        <div
-          class="project-item"
-          v-for="(item, i) in projectList"
-          :key="i"
-          @mouseenter="projectIndex = i"
-        >
-          <div class="project-item-box" :class="item.label">
-            <img src="/images/pro_item.png" alt="" />
-            <div class="item-text">
-              <h2>
-                {{ item.system }} <span>{{ item.name }}</span>
-              </h2>
-              <p>{{ item.des }}</p>
-            </div>
-          </div>
-          <!-- <div class="item-mask"></div> -->
-        </div>
-      </div>
-      <div class="project-tab">
-        <span @click="projectIndex = 0" :class="{ active: projectIndex === 0 }"
-          >开发者平台</span
-        >
-        <span @click="projectIndex = 1" :class="{ active: projectIndex === 1 }"
-          >权限系统</span
-        >
-        <span @click="projectIndex = 2" :class="{ active: projectIndex === 2 }"
-          >个人网站</span
-        >
-        <span @click="projectIndex = 3" :class="{ active: projectIndex === 3 }"
-          >工具库</span
-        >
-        <div class="cover" :style="{ left: getCoverLeft() }">
-          <div class="cover-top"></div>
-          <div class="cover-bottom">
-            <div class="left-cover">
-              <div class="cover-up"></div>
-              <div class="cover-down"></div>
-            </div>
-            <div class="right-cover">
-              <div class="cover-up"></div>
-              <div class="cover-down"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="content-section project-detail">
-      <div class="project-detail-content">
-        <div
-          v-for="(item, i) in projectList[projectIndex].detail"
-          :key="i"
-          class="project-detail-item"
-        >
-          <span class="detail-title"
-            >{{ item.type }}：<a
-              v-if="item.name"
-              :href="item.data[1].addr"
-              style="color:#fe9300"
-              >{{ item.name }}</a
-            >
-          </span>
-          <div class="detail-info">
-            <template v-if="item.info">
-              <p v-for="(info, i) in item.info.split('\n')" :key="i">
-                {{ info }}
-              </p>
-            </template>
-            <a v-else :href="item.addr" class="detail-info">{{ item.addr }}</a>
-          </div>
-          <template v-if="item.data">
-            <div v-for="(d, i) in item.data" :key="i" class="sub-item">
-              <span class="detail-title">{{ d.type }}：</span>
-              <div class="detail-info">
-                <template v-if="d.list">
-                  <p v-for="(l, i) in d.list.split('\n')" :key="i">
-                    {{ l }}
-                  </p>
-                </template>
-                <a v-else :href="d.addr" class="detail-info">{{ d.addr }}</a>
-              </div>
-            </div>
-          </template>
-        </div>
-      </div>
-    </div>
-    <div class="footer-nav">
-      <div class="copyright">
-        <img src="/logo.png" alt="" />
-        <p>
-          BEAF.LIFE 最后更新于2019年6月10日<br />
-          简历模板由 Kerry 设计开发 (使用本模板时请注明)
-        </p>
-      </div>
-      <div class="nav-contact">
-        <a href="https://github.com/kerrypf" target="_blank"
-          ><i class="iconfont beaf-github"></i
-        ></a>
-        <a
-          href="https://www.linkedin.com/in/%E5%9F%B9%E8%8A%B3-%E6%9D%A8-b74328154/"
-          target="_blank"
-          ><i class="iconfont beaf-linkedin0"></i
-        ></a>
-        <el-popover placement="bottom" title="微信" width="200" trigger="click">
-          <img src="/images/wechat.jpg" alt="" width="100%" />
-          <i class="iconfont beaf-wechat" slot="reference"></i>
-        </el-popover>
-        <el-popover placement="bottom" title="QQ" width="200" trigger="click">
-          <img src="/images/qq.jpg" alt="" width="100%" />
-          <i class="iconfont beaf-qq" slot="reference"></i>
-        </el-popover>
-      </div>
-    </div>
-
-    <!-- <div id="userList"> 
-      <ul class="contextmenu">
-        <li class="enabled">
-          <span><a>color1</a></span>
-          
-        </li>
-        <li>
-          <span><a>color2</a></span>
-          
-        </li>
-      </ul>
-22222
-    </div> -->
-    <div class="testbox">
-      <span
-        >Access-Control-Allow-Origin爱摄房价各方阿尔冯引入鹅服鳄鱼肉Access-Control-Allow-OriginAccess-Control-Allow-OriginAccess-Control-Allow-OriginAccess-Control-Allow-Origin合肥人</span
-      >
-    </div>
-    <!-- <el-button @click="getEvent">getqq</el-button>
-    <el-button @click="deleteEvent">delete</el-button>
-    <el-button @click="postEvent">post</el-button>
-    <el-button @click="testStatusCode">test</el-button> -->
   </div>
+  <div  class="page page2">
+    <div class="pageContent">
+      <p class="moduleTtitle">项目经验</p>
+      <div v-for="(item, i) in projectExperience" :key="i">
+        <label>{{item.github?'github':''}}项目：{{item.project || item.github}}<span class="addr">{{item.addr}}</span></label>
+        <p v-if="item.duty">职责：{{item.duty}}</p>
+        <span>技术：</span>
+        <div class="techDetail">
+          <p v-for="(li, index) in item.tech" :key="index">{{index+1}}. {{li}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </template>
 <script>
-import service from "../../service";
-console.log(service.common.get, "service");
-import particles from "../../assets/particles.json";
 export default {
   data() {
     return {
-      activeIndex: "1",
-      projectIndex: 0,
-      coverLeft: ["95px", "395px", "695px", "995px"],
-      projectList: [
-        {
-          img: "/images/pro_item.png",
-          system: "DUI系统",
-          name: "开发者平台",
-          label: "product",
-          des: "DUI开发者平台系统，基于vue开发。全链路开发智能语音交互产品...",
-          detail: [
-            {
-              type: "项目描述",
-              info:
-                "项目由六人前端开发完成。开发者平台，即全链路智能对话开放平台，用以实现复杂的语音交互功能，如满足用户导航，听音乐，查天气，看电影等方方面面的需求。开发者可以根据适用场景的需求来定制配置不同识别引擎和功能的产品。项目使用vue+webpack构建的单页面应用,采用了vuex、vue-router、element-ui、axios以及ES6+语法，采用组件化思想搭建整个项目，从而使组件高度复用。"
-            },
-            {
-              type: "岗位职责",
-              info:
-                "公司内部ui组件库的发起人和负责人。主要负责项目架构设计，页面的布局和数据渲染，完成与后端的接口对接，配合后端的对接联调。主要负责平台的产品与技能的开发，独立完成产品列表，产品版本创建以及版本开发到版本发布等相关业务的页面开发；独立完成技能列表，技能创建以及技能开发到技能发布、上架、分享等相关业务的页面开发。"
-            },
-            {
-              type: "项目架构",
-              info: `1.使用vue+webpack构建项目环境，以及vuex、vue-router构建单页面应用；\n 
-                  2.使用axios向后台发起请求，基于axios封装处理接口返回异常，数据结构处理，请求中断，请求超时；\n 
-                  3.使用element-ui作为项目开发ui组件库，并基于element-ui开发满足公司业务的公共通用组件；\n 
-                  4.使用node作为中间件，代理前端静态资源（js,css,image等），处理Token验证； \n 
-                  5.使用lodash工具库，实现业务数据的逻辑处理；使用阿里矢量图标库。`
-            },
-            {
-              type: "开发技术",
-              info: `1.node搭建前端本地开发服务，利用谷歌插件(Modify Header Value)、配合axios、node服务，实现项目同时代理到多环境，同一项目代理到不同域，提高本地开发效率，本地还原线上环境，快速定位bug等开发模式； \n
-                  2.使用Yapi作为后端接口管理，为前端提供mock数据；使用lanhuapp管理和共享文档和设计图，为开发者提供可视化样式数据； \n
-                  3.利用vue的directive、mixins、model，实现复杂业务开发；\n
-                  4.在开发模式下，开启vuex的严格模式，在不是有mutation函数引起的状态变更，严格规定使用双向绑定的计算属性来变更状态；\n
-                  5.利用vue-router的路由钩子函数处理路由变化的相关业务处理；路由完成前获取数据，保证数据请求完成渲染页面。`
-            }
-          ]
-        },
-        {
-          system: "DUI系统",
-          name: "权限管理",
-          label: "permission",
-          des:
-            "DUI平台产品接入系统，基于vue开发。全链路开发智能语音交互产品...",
-          detail: [
-            {
-              type: "项目描述",
-              info:
-                "项目由我一个人独立完成。该项目是一个权限管理系统，针对DUI开发者平台的用户角色及类型设置权限"
-            },
-            {
-              type: "岗位职责",
-              info:
-                "主要负责项目架构设计，页面的布局和数据渲染，完成与后端的接口对接，配合后端的对接联调。主要开发了权限系统创建，权限系统列表，开发者类型与角色对应关系，权限设置页面，及权限查询页面。"
-            },
-            {
-              type: "项目架构",
-              info: `1.使用vue+webpack构建项目环境，以及vuex、vue-router构建单页面应用；\n 
-                  2.使用axios向后台发起请求，基于axios封装处理接口返回异常，数据结构处理，请求中断，请求超时；\n 
-                  3.使用element-ui作为项目开发ui组件库，开发公共通用组件；\n 
-                  4.使用lodash工具库，实现业务数据的逻辑处理；使用阿里矢量图标库。`
-            },
-            {
-              type: "开发技术",
-              info: `1.项目是一个通过命令自动快速生成的项目，是由自己开发的一个自动化脚手架（create-aife-app, 公司前端内部脚手架）完成； \n
-                  2.webpack+webpack-dev-server搭建前端本地开发服务； \n
-                  3.使用Yapi作为后端接口管理，为前端提供mock数据；\n  
-                  4.node搭建前端本地开发服务，利用谷歌插件（Modify Header Value）、配合axios、node服务，实现项目同时代理到多环境，同一项目代理到不同域，提高本地开发效率，本地还原线上环境，快速定位bug等开发模式； \n
-                  5.使用lanhuapp管理和共享文档和设计图，为开发者提供可视化样式数据； \n
-                  6.利用vue的directive、mixins、model，实现复杂业务开发；\n
-                  7.在开发模式下，开启vuex的严格模式，在不是有mutation函数引起的状态变更，严格规定使用双向绑定的计算属性来变更状态；\n
-                  8.利用vue-router的路由钩子函数处理路由变化的相关业务处理；路由完成前获取数据，保证数据请求完成渲染页面。`
-            }
-          ]
-        },
-        {
-          system: "BEAF",
-          name: "个人网站",
-          label: "product",
-          des: "是一个关于个人信息及技术心得分享的网站...",
-          detail: [
-            {
-              type: "项目描述",
-              info:
-                "本项目是一个关于个人信息及技术心得分享的网站，使用vue+webpack构建的单页面应用，项目采用了vuex、vue-router以及ES6语法，采用组件化思想搭建整个项目。目前只完成了个人首页，其他页面正在开发中。"
-            },
-            {
-              type: "项目架构",
-              info: `1.使用vue+webpack构建项目环境，以及vuex、vue-router构建单页面应用；\n 
-                  2.引入了自己开发的ui组件库beaf-ui,实行个性化的ui组件；\n 
-                  3.使用element-ui作为项目开发ui组件库，开发公共通用组件；\n 
-                  4.使用阿里矢量图标库。`
-            },
-            {
-              type: "开发技术",
-              info: `1.项目是一个通过命令自动快速生成的项目，是由自己开发的一个自动化脚手架(create-beaf-app)完成
-                  2.webpack+webpack-dev-server搭建前端本地开发服务`
-            },
-            {
-              type: "git地址",
-              addr: `https://github.com/kerrypf/beaf-station`
-            },
-            {
-              type: "网站地址",
-              addr: `https://station.beaf.tech`
-            }
-          ]
-        },
-        {
-          system: "BEAF",
-          name: "工具库",
-          label: "product",
-          des: "实现前端开发的规范化，模块化，自动化，工程化",
-          detail: [
-            {
-              type: "前端架手架",
-              name: "create-beaf-app",
-              info:
-                "是一个基于CRA库修改的前端脚手架工具库，实现快速创建前端项目的工具，webpack零配置。版本一（create-aife-app）正在被公司内部项目使用。版本二基于版本一进行大版本的升级，从webpack3到webpack4的升级。",
-              data: [
-                {
-                  type: "开发技术",
-                  list: `1.webpack+webpack-dev-server搭建前端本地开发服务；\n
-                      2.本地服务配合谷歌插件(Modify Header Value)、axios，实现项目同时代理到多环境，同一项目代理到不同域的功能。`
-                },
-                {
-                  type: "git地址",
-                  addr: "https://github.com/kerrypf/create-beaf-app"
-                }
-              ]
-            },
-            {
-              type: "ui组件库",
-              name: "beaf-ui",
-              info:
-                "本项目是一个前端ui组件库，用于开发各类ui组件，提供相应的使用说明文档，实现了组件开发的实时调试",
-              data: [
-                {
-                  type: "开发技术",
-                  list: `1.集成了ui组件库使用说明文档，用express+webpack构建文档服务，用于组件开发过程的调试；\n
-                      2.集成了element-ui, 可基于element-ui进行组件二次开发；\n
-                      3.使用rollup打包组件`
-                },
-                {
-                  type: "git地址",
-                  addr: "https://github.com/kerrypf/beaf-ui"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    };
-  },
-  methods: {
-    testStatusCode() {
-      service.common.test_status_code.get().then(res => {
-        console.log("service.common.");
-      });
-    },
-
-    deleteEvent() {
-      service.common
-        .delete(
-          "skill_delete",
-          {
-            skillId: 1231
-          },
-          {
-            body: "ypf"
-          }
-        )
-        .then(res => {
-          console.log(res, "delete");
-        });
-    },
-    getEvent() {
-      service.common.get("user_info_get").then(res => {
-        console.log(res, "get");
-      });
-    },
-    postEvent() {
-      service.common
-        .post("skill_create", {
-          id: 1231
-        })
-        .then(res => {
-          console.log(res, "delete");
-        });
-    },
-    handleSelect() {},
-    getCoverLeft() {
-      const n = this.projectIndex + 1;
-      const e = 1 / 4;
-      const m = 1 / 8;
-
-      const left = (n * (1 / 4) - 1 / 8) * 100;
-      console.log(left, "nnnnnnnn");
-      return left + "%";
+      basicInfo: [{
+        label: '姓名',
+        value: '杨培芳'
+      },{
+        label: '性别',
+        value: '女'
+      },{
+        label: '生日',
+        value: '1993.01.01'
+      },{
+        label: '婚姻状况',
+        value: '已婚'
+      },{
+        label: '政治面貌',
+        value: '中共党员'
+      },{
+        label: '工作经验',
+        value: '3年'
+      }],
+      jobIntension: [{
+        label: '岗位',
+        value: '前端开发工程师'
+      },{
+        label: '工作地点',
+        value: '苏州'
+      },{
+        label: '期望薪资',
+        value: '20k~24k'
+      }],
+      eduBackground: [{
+        label: '学历',
+        value: '硕士'
+      },{
+        label: '毕业院校',
+        value: '苏州大学'
+      },{
+        label: '毕业时间',
+        value: '2017.06'
+      }],
+      contactInfo: [{
+        label: '邮箱',
+        value: 'kerrypf@foxmail.com',
+        icon: 'beaf-youxiang'
+      },{
+        label: '电话',
+        value: '18896727597',
+        icon: 'beaf-dianhua'
+      },{
+        label: '住址',
+        value: '苏州虎丘区',
+        icon: 'beaf-dizhi'
+      }],
+      skills: [
+        '熟练掌握原生javascript的前端开发，应用 javascript 高级语法（ es6+）逐步减少工具类库的使用',
+        'vue开发框架的重度使用者，熟练运用vue、vuex、vue-router等开发web页面',
+        '深度使用element-ui开发web页面, 掌握flex、div+css布局响应式页面',
+        '熟悉webpack, rollup, gulp前端构建工具的使用',
+        '使用 node.js（express）创建 Web 应用;熟练掌握photoshop相关技术，有 一定的设计和审美力'
+      ],
+      workExperience:[{
+        name: '中移（苏州）软件技术有限公司',
+        post: '助理软件开发工程师',
+        des: [
+          '负责5G网管产品故障系统的维护和开发，主要将故障系统告警监控流水窗的重新开发及性能优化',
+          '物联网中台项目开发，动态表单组件开发提取，实现高度模块化开发',
+          'npm私有仓库建立，公司内部ui组件库架构及公共组件开发',
+          '优化项目架构，根据公司代码规范，配置eslint, 代码提交前检测并风格化代码；实现postcss替代less、sass以减少项目依赖'
+        ],
+        rangTime: '2019.09 ~至今'
+      },{
+        name: '苏州思必驰信息科技有限公司',
+        post: '前端开发工程师',
+        des: [
+          '作为前端项目开发leader，理解迭代需求，分配任务；在公司内部制定前端编程规范，完善前端框架；制定公司内部分支及版本管理规站',
+          '开发PC端单页面应用；负责公司DUI开发者平台系统的开发，主要开发 了产品系统和技能系统',
+          '与设计团队、后端开发团队紧密配合，与设计团队共同制定页面样式规范,与后端开发团队商讨api返回数据结构；与运维团队配合，实施前端项目部署',
+          'npm私有仓库建立，公司内部ui组件库架构，负责公司内部组件库开发，全局功能开发；封装Axios对请求响应做异常处理和数据处理，及相关业务处理'
+        ],
+        rangTime: '2017.05 ~2019.08'
+      },{
+        name: '苏州优圣美智能系统有限公司',
+        post: '前端开发工程师',
+        des: [
+          '按照需求设计独立完成页面；负责公司现有项目和新项目的前端修改调试和开发工作；利用模板引擎handlebars.js开发，实现组件化开发模式',
+          '利用D3.js，原生js，及jquery开发公司各种可视化页面，开发自定义图表 （图表可配置），如：树状图，柱状图，折线图，饼图，力导向图，环形图，思维导图等'
+        ],
+        rangTime: '2016.06 ~2017.04'
+      }],
+      projectExperience:[{
+        project: '5G网管产品',
+        duty: '通用ui组件和公共业务组件的开发，故障系统的维护与开发，主要重新开发告警实时监控流水窗，动态表单、动态表格、动态标签页的公共业务组件开发；项目架构的优化',
+        tech: [
+          'vue-cli创建的多页面应用，基于iview组件开发业务',
+          '基于Axios封装公共工具，处理请求响应异常，数据结构处理，请求中断，请求超时',
+          'postcss实现less、sass功能，减少项目依赖包',
+          '基于element-ui开发通用公共组件和业务组件，逐步替换iview'
+        ]
+      },{
+        project: 'DUI开发者平台',
+        addr: 'https://www.dui.ai/console/product/index.html',
+        duty: '通用ui组件和公共业务组件的开发，独主完成产品系统和技能系统的开发，主要包括产品版本创建以及版本开发到版本发布等相关业务的页面开发；技能创建以及技能开发到技能发布、上架 、分享等相关业务的页面开发',
+        tech:[
+          '使用定制化脚手架工具（@aife/aife-scripts）,快速创建应用项目',
+          'vue+webpack+vuex+vue-router构建单页面应用',
+          '使用element-ui作为项目开发ui组件库, 公司内部业务ui公共通用组件库（@aife/aife-ui）',
+          '使用Axios发起请求，基于Axios封装公共工具，处理请求响应异常，数据结构处理，请求中断，请求超时',
+          'node搭建前端本地开发服务，利用谷歌插件（Modify Header Value）、配合axios、node服务，实现本地开发代理，同时代理不同环境进行调试'
+        ]
+      },{
+        project: '前端自动化脚手架，ui组件库',
+        addr: 'http://10.154.5.152:4873（公司内部服务，外网不可访问）',
+        tech: [
+          'webpack+webpack-dev-server建前端本地开发服务，实现现脚手架，项目自动集成ui组件，通用工具，达到开箱即用，一步到位的效果',
+          '用rollup完成ui组件库打包，集成element并基于element进行二次开发'
+        ]
+      }]
     }
-  },
-  mounted() {
-    particlesJS("particles-js", particles, function() {
-      console.log("callback - particles.js config loaded");
-    });
   }
-};
+}
 </script>
-<style lang="scss" scoped>
-.testbox {
-  width: 500px;
-  position: relative;
-  line-height: 1.4em;
-  /* 3 times the line-height to show 3 lines */
-  height: 4.2em;
-  overflow: hidden;
-  word-break: break-all;
-  &::after {
-    content: "...";
-    font-weight: bold;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    padding: 0 20px 1px 45px;
-    background-color: #fff;
-  }
+<style lang="scss">
+.page{
+  font-size: 14px;
+  height: 1120px;
+  width: 793px;
+  background-color: #c3c3c3;
+  padding: 30px 46px;
 }
-#userList {
-  height: 500px;
-}
-#userList .contextmenu {
-  position: sticky;
-  top: 50px;
-}
-#userList .contextmenu li.enabled a {
-  color: red;
-}
-div#userList ul.contextmenu li span a {
-  color: blue;
-}
-.banner-container {
-  position: relative;
-  // height: 680px;
-  background: #2a2e31;
-  .top-nav {
-    position: relative;
-    z-index: 101;
-    height: 60px;
-    padding: 0 30px;
-    > img {
-      float: left;
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 97.95px;
-    }
-    .el-button {
-      border: 1px solid #fefefe;
-      color: #fefefe;
-      padding: 10px 20px;
-      position: absolute;
-      right: 30px;
-      top: 50%;
-      transform: translateY(-50%);
-      &:hover {
-        transition: background-color 0.3s ease;
-        background-color: #fefefe;
-        color: #2a2e31;
-      }
-    }
-  }
-  .banner-title {
-    margin-top: 100px;
-    > h1 {
-      color: #fefefe;
-      font-family: Heroes, Proxima Nova, Helvetica, Roboto, sans-serif;
-      // font-size: 4.5rem;
-      // line-height: 1.35;
-      opacity: 1;
-      text-align: center;
-      text-shadow: 0 0 40px hsla(0, 0%, 100%, 0.75);
-      // line-height: 120px;
-      > span {
-        // font-size: 6.5rem;
-        font-family: Heroes, Proxima Nova, Helvetica, Roboto, sans-serif;
-      }
-    }
-  }
-  .beaf-el-menu {
-    border-bottom: none;
+  .page1{
     display: flex;
-    justify-content: center;
-    .el-menu-item {
-      font-size: 16px;
-      font-family: Tahoma, Geneva, Verdana, sans-serif;
-      color: hsla(0, 0%, 100%, 0.75);
-      cursor: pointer;
-      transition: none;
-      &:hover {
-        color: #fefefe;
-        transition: color 0.3s ease;
-        background-color: unset !important;
+    // padding: 71.12px 53.48px;
+    
+    position: relative;
+    .cvHeader{
+      padding: 5px 20px 15px;
+      background-color: #f1f1f1;
+      display: flex;
+      border: 2px solid #303030;
+      width: calc(100% - 105px);
+      position: absolute;
+      margin-top: 15px;
+      border-radius: 2px;
+      &::before{
+        content: '';
+        width: 0;
+        height: 0;
+        border: 55px solid transparent;
+        border-right: 109px solid #303030;
+        position: absolute;
+        transform: rotate(-61deg);
+        left: -74px;
+        top: 103px;
       }
-      &.is-active {
-        border-bottom: none;
-        color: #fefefe;
+      &::after{
+        content: '';
+        width: 0;
+        height: 0;
+        border: 85px solid transparent;
+        border-right: 160px solid #c3c3c3;
+        border-left: 60px solid transparent;
+        position: absolute;
+        transform: rotate(-61deg);
+        left: -92px;
+        top: 113px;
+      }
+      .imageBox{
+        position: absolute;
+        z-index: 1;
+        top: 65px;
+        left: 15px;
+        >img{
+          width: 110px;
+          border: 2px solid #303030;
+          border-radius: 100%;
+        }
+      }
+      .leftTitle{
+        width: 25%;
+        text-align: right;
+        // line-height:40px;
+        .mainTitle{
+          font-size:30px;
+        }
+      }
+      .rightContact{
+        margin-top: 15px;
+        margin-left: 20px;
+        width: 100%;
+        >p{
+          font-size: 24px;
+          opacity: 0;
+        }
+        .contactBox{
+          display: flex;
+          padding-top: 10px;
+          align-items: center;
+          border-top: 1px solid #4646468e;
+          // padding-right: 80px;
+          justify-content: flex-end;
+          font-size: 12px;
+          >div{
+            margin-left:30px;
+          }
+          i {
+            font-size: 20px;
+            border-bottom: 1px solid #4646468e;
+            padding-bottom: 5px;
+          }
+          .contactDetail{
+            display: inline-block;
+            position: relative;
+            top: 8px;
+          }
+        }
+      }
+    }
+    .leftContent{
+      padding: 200px 15px 10px 0;
+      width: 200px;
+      position: relative;
+      >div{
+        &:not(:first-child){
+          border-top: 1px solid #9e9e9e;
+          margin-top: 20px;
+          padding-top: 20px;
+        }
+        .detailForm{
+          color: #565656;
+          line-height: 25px;
+          padding-left: 5px;
+          >label{
+            color: #565656
+          }
+        }
+      }
+      .moduleTitle{
+        color:#464343;
+        font-size: 20px;
+        line-height: 40px;
+      }
+      
+    }
+    .rightContent{
+      width: 100%;
+      padding: 0 10px;
+      background-color: #f1f1f1;
+      padding-top: 140px;
+      .moduleTtitle{
+        font-size: 18px;
+        margin-bottom: 8px;
+        margin-top: 15px;
+      }
+      .moduleDetail{
+        &:not(:last-child){
+          margin-bottom:10px;
+        }
+        >label{
+          display: inline-block;
+          width: 100%;
+          border-bottom: 1px solid #ccc;
+          padding-bottom: 5px;
+          margin-bottom: 10px;
+          font-weight: 500;
+          color: #333;
+          >span{
+            float: right;
+          }
+        }
+        >div{
+          color: #2a2a2a;
+          >span{
+            color: #464646;
+          }
+          .post{
+            font-size: 12px;
+            float: right;
+            position: relative;
+            top: -10px;
+          }
+          >div{
+            line-height: 22px;
+            padding-left: 5px;
+          }
+        }
+      }
+      .moduleContent{
+        .subContent{
+          color: #464646;
+          font-size: 13px;
+          line-height: 20px;
+        }
+        .mainContent{
+          color: #2a2a2a;
+          line-height: 24px;
+          margin-left: 5px;
+        }
       }
     }
   }
-}
-.content-section {
-  padding: 30px;
-  padding-left: calc(50% - 40%);
-  padding-right: calc(50% - 40%);
-  .content-title {
-    text-align: center;
-    margin: 20px 0;
+  .page2 {
+    .pageContent{
+      background-color: #f1f1f1;
+      width: 100%;
+      height: 100%;
+      padding: 20px 15px;
+      >div{
+        &:not(:last-child){
+          margin-bottom:10px;
+        }
+        >label{
+          display: inline-block;
+          width: 100%;
+          border-bottom: 1px solid #ccc;
+          padding-bottom: 5px;
+          margin-bottom: 10px;
+          font-weight: 500;
+          color: #333;
+          >span{
+            float: right;
+          } 
+        }
+        >p{
+          color: #464646;
+          font-size: 13px;
+          line-height: 20px;
+          margin-bottom: 10px;
+        }
+      }
+      .moduleTtitle{
+        font-size: 18px;
+        margin-bottom: 8px;
+        margin-top: 15px;
+      }
+      .techDetail{
+        margin-left:5px;
+        color: #2a2a2a;
+        line-height: 24px;
+      }
+    }
   }
-}
-#particles-js {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
 </style>
